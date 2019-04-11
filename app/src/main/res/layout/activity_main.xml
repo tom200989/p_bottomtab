@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.bottomtab.bottomtab.BottomTab
+        android:id="@+id/bottomtab"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"
+        app:item_default_position="0"
+        app:item_iv_check_color="#ffff00"
+        app:item_iv_scale_height_percent="0.4"
+        app:item_iv_scale_same="true"
+        app:item_iv_scale_width_percent="0.4"
+        app:item_tv_color_check="#FFFF00"
+        app:item_tv_color_uncheck="#FFFFFF"
+        app:item_tv_margin_top="10"
+        app:item_tv_size_percent="0.15">
+
+    </com.bottomtab.bottomtab.BottomTab>
+</RelativeLayout>

@@ -1,0 +1,49 @@
+[PART1: 需求]
+底部切换栏的简单实现, 在项目总经常会遇到采用底部控制栏来切换视图的需求
+
+[PART2: 属性]
+
+        <param>
+        item_iv_scale_width_percent:    图标宽度比例(默认0.5f)
+        item_iv_scale_height_percent:   图标高度比例(默认0.5f)
+        item_iv_scale_same:             图标宽高是否统一使用相同px (基于高度:true则 宽度 = 高度), 自动选择宽高中的最小值
+        item_iv_check_color:            图标渲染选中时渲染的颜色(默认 #009688)
+        item_tv_size_percent:           字体大小比例(建议值0.15)
+        item_tv_color_uncheck:          字体颜色(非选中, 默认 #CCCCCC)
+        item_tv_color_check:            字体颜色(选中, 默认 #009688)
+        item_tv_margin_top:             字体上边距 (默认 5px)
+        item_default_position:          初始显示位置 (默认第1个, position = 0)
+        
+        <method>
+        create(int[] images, int[] texts):          创建(@param1: 图片资源 @param2: 字符资源)
+        setOnBottomTabFinishListener(position):     初始完成监听器(@param1: 完成时初始位标)
+        setOnBottomTabItemClickListener(position):  初始完成监听器(@param1: 点击时位标)
+        
+[PART3: 使用]
+<XML布局>
+note: 可以使用百分比布局, 也可以使用普通的布局
+    <com.bottomtab.bottomtab.BottomTab
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:item_iv_check_color="#00ffff"
+        app:item_iv_scale_height_percent="0.3"
+        app:item_iv_scale_same="true"
+        app:item_iv_scale_width_percent="0.8"
+        app:item_tv_color_check="#009688"
+        app:item_tv_color_uncheck="#FFFFFF"
+        app:item_tv_margin_top="10"
+        app:item_default_position="4"
+        app:item_tv_size_percent="0.10" />
+
+<java>
+int[] images = {R.drawable.pic1, R.drawable.pic2, R.drawable.pic3, ....};
+int[] texts = {R.string.text1, R.string.text2, R.string.text3, ....};
+
+BottomTab bottomTab = findViewById(R.id.bottom);
+bottomTab.setOnBottomTabFinishListener(position -> 初始化完成, 返回初始化位标);
+bottomTab.setOnBottomTabItemClickListener(position -> 点击返回被选中的位标);
+bottomTab.create(images, texts);
+
+[PART4: 依赖]
+api 'com.android.support:support-v4:28.0.0'
+api 'com.android.support:appcompat-v7:28.0.0'

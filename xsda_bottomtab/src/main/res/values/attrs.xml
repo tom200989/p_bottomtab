@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomTab">
+        <!-- 图标宽度比例 -->
+        <attr name="item_iv_scale_width_percent" format="float" />
+        <!-- 图标高度比例 -->
+        <attr name="item_iv_scale_height_percent" format="float" />
+        <!-- 图标宽高是否统一使用相同px(基于高度:true则 宽度 = 高度) -->
+        <attr name="item_iv_scale_same" format="boolean" />
+        <!-- 图标渲染选中时渲染的颜色 -->
+        <attr name="item_iv_check_color" format="string" />
+        <!-- 字体大小比例(建议值0.15) -->
+        <attr name="item_tv_size_percent" format="float" />
+        <!-- 字体颜色(非选中) -->
+        <attr name="item_tv_color_uncheck" format="string" />
+        <!-- 字体颜色(选中) -->
+        <attr name="item_tv_color_check" format="string" />
+        <!-- 字体margintop -->
+        <attr name="item_tv_margin_top" format="integer" />
+        <!-- 初始显示位置 -->
+        <attr name="item_default_position" format="integer" />
+    </declare-styleable>
+</resources>
